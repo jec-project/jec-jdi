@@ -18,16 +18,12 @@ import "mocha";
 import {expect} from "chai";
 
 // Utilities:
-import * as utils from "../../../../../utils/test-utils/utilities/InjectFailTestUtils";
+import * as utils from "../../../../../utils/test-utils/utilities/InvalidInjectTestUtils";
 
 // Test:
-describe("@Inject", ()=> {
+describe("@Inject#class", ()=> {
 
-  it("Injecting a property should throw an error since no context has been declared for this decorator", function() {
-    expect(utils.buildPropertyClassRef).to.throw(Error);
-  });
-  
-  it("Injecting a parameter should throw an error since no context has been declared for this decorator", function() {
-    expect(utils.buildParameterClassRef).to.throw(Error);
+  it("should throw an error since the @Inject decorator cannot be used to decorate classes", function() {
+    expect(utils.buildClassRef).to.throw(Error);
   });
 });

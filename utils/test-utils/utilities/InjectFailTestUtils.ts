@@ -21,9 +21,14 @@ import {ClassLoader} from "jec-commons";
  */
 
 // Utilities:
-const VALID_CLASS:string = process.cwd() + "/utils/test-utils/classes/InjectPropertyTestClass";
+const PROPERTY_INJECT_CLASS:string = process.cwd() + "/utils/test-utils/classes/InjectPropertyTestClass";
+const PARAMETER_INJECT_CLASS:string = process.cwd() + "/utils/test-utils/classes/InjectParameterTestClass";
 const LOADER:ClassLoader = new ClassLoader();
-export const buildClassRef:Function = function():void {
-  let ClassRef:any = LOADER.loadClass(VALID_CLASS);
+export const buildPropertyClassRef:Function = function():void {
+  let ClassRef:any = LOADER.loadClass(PROPERTY_INJECT_CLASS);
+  new ClassRef();
+};
+export const buildParameterClassRef:Function = function():void {
+  let ClassRef:any = LOADER.loadClass(PARAMETER_INJECT_CLASS);
   new ClassRef();
 };

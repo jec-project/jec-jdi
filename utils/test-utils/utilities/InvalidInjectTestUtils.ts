@@ -14,20 +14,16 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
-import "mocha";
-import {expect} from "chai";
+import {ClassLoader} from "jec-commons";
+
+/*!
+ * This module constains utilities used by the InvalidInjectTest test suite.
+ */
 
 // Utilities:
-import * as utils from "../../../../../utils/test-utils/utilities/InjectFailTestUtils";
-
-// Test:
-describe("@Inject", ()=> {
-
-  it("Injecting a property should throw an error since no context has been declared for this decorator", function() {
-    expect(utils.buildPropertyClassRef).to.throw(Error);
-  });
-  
-  it("Injecting a parameter should throw an error since no context has been declared for this decorator", function() {
-    expect(utils.buildParameterClassRef).to.throw(Error);
-  });
-});
+const INVALID_CLASS:string = process.cwd() + "/utils/test-utils/classes/InvalidInjectClass";
+const LOADER:ClassLoader = new ClassLoader();
+export const buildClassRef:Function = function():void {
+  let ClassRef:any = LOADER.loadClass(INVALID_CLASS);
+  new ClassRef();
+};
