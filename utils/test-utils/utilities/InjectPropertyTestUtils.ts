@@ -16,7 +16,7 @@
 
 import {ClassLoader, JcadContextFactory, JcadContext, DecoratorConnectorManager,
         JcadContextManager, Decorator} from "jec-commons";
-import {InjectConnector} from "../classes/InjectConnector";
+import {JdiConnector} from "../classes/JdiConnector";
 import {JdiConnectorRefs} from "../../../src/com/jec/jdi/jcad/JdiConnectorRefs";
 import {InjectParams} from "../../../src/com/jec/jdi/annotations/core/InjectParams";
 
@@ -39,7 +39,7 @@ export const KEY:string = "bean";
 export const INJECT_DECORATOR:Decorator = new InjectDecorator();
 export const initContext:Function = function():JcadContext {
   let factory:JcadContextFactory = new JcadContextFactory();
-  let connector = new InjectConnector(JdiConnectorRefs.INJECT_PROPERTY_CONNECTOR_REF, INJECT_DECORATOR);
+  let connector = new JdiConnector(JdiConnectorRefs.INJECT_PROPERTY_CONNECTOR_REF, INJECT_DECORATOR);
   let context:JcadContext = factory.create();
   DecoratorConnectorManager.getInstance().addConnector(connector, context);
   JcadContextManager.getInstance().addContext(JdiConnectorRefs.INJECT_PROPERTY_CONNECTOR_REF, context);

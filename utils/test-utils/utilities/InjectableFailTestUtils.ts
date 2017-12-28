@@ -14,18 +14,16 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
-import {InjectParams} from "../../../src/com/jec/jdi/annotations/core/InjectParams";
-import {InjectableParams} from "../../../src/com/jec/jdi/annotations/core/InjectableParams";
+import {ClassLoader} from "jec-commons";
 
-export const QUALIFIER:string = "test";
-export const RETENTION:Array<string> = ["TEST"];
+/*!
+ * This module constains utilities used by the InjectableFailTest test suite.
+ */
 
-export const INJECT_PARAMS:InjectParams = {
-  qualifier: QUALIFIER,
-  retention: RETENTION
-};
-
-export const INJECTABLE_PARAMS:InjectableParams = {
-  qualifier: QUALIFIER,
-  retention: RETENTION
+// Utilities:
+const INJECTABLE_CLASS:string = process.cwd() + "/utils/test-utils/classes/InjectableTestClass";
+const LOADER:ClassLoader = new ClassLoader();
+export const buildClassRef:Function = function():void {
+  let ClassRef:any = LOADER.loadClass(INJECTABLE_CLASS);
+  new ClassRef();
 };

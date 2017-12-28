@@ -21,33 +21,31 @@ import {JdiConnectorRefs} from "../../../src/com/jec/jdi/jcad/JdiConnectorRefs";
 import {InjectParams} from "../../../src/com/jec/jdi/annotations/core/InjectParams";
 
 /*!
-* This module constains utilities used by the InjectParameterTest test suite.
+* This module constains utilities used by the InjectableTest test suite.
 */
 
 // Utilities:
 const LOADER:ClassLoader = new ClassLoader();
-const VALID_CLASS:string = process.cwd() + "/utils/test-utils/classes/InjectParameterTestClass";
+const VALID_CLASS:string = process.cwd() + "/utils/test-utils/classes/InjectableTestClass";
 export const params:any = require("./ParamUtils");
 export const buildClassRef:Function = function():void {
   let ClassRef:any = LOADER.loadClass(VALID_CLASS);
   new ClassRef();
 };
-class InjectDecorator implements Decorator {
-  decorate(target:any, propertyKey:string, parameterIndex:number,
-           params:InjectParams):any { return target; }
+class InjectableDecorator implements Decorator {
+  decorate(target:any, params:InjectParams):any { return target; }
 }
-export const PARAMETER_INDEX:number = 0;
-export const INJECT_DECORATOR:Decorator = new InjectDecorator();
+export const INJECTABLE_DECORATOR:Decorator = new InjectableDecorator();
 export const initContext:Function = function():JcadContext {
   let factory:JcadContextFactory = new JcadContextFactory();
-  let connector = new JdiConnector(JdiConnectorRefs.INJECT_PARAMETER_CONNECTOR_REF, INJECT_DECORATOR);
+  let connector = new JdiConnector(JdiConnectorRefs.INJECTABLE_CONNECTOR_REF, INJECTABLE_DECORATOR);
   let context:JcadContext = factory.create();
   DecoratorConnectorManager.getInstance().addConnector(connector, context);
-  JcadContextManager.getInstance().addContext(JdiConnectorRefs.INJECT_PARAMETER_CONNECTOR_REF, context);
+  JcadContextManager.getInstance().addContext(JdiConnectorRefs.INJECTABLE_CONNECTOR_REF, context);
   return context;
 }
 export const resetContext:Function = function(context:JcadContext):void {
-  JcadContextManager.getInstance().removeContext(JdiConnectorRefs.INJECT_PARAMETER_CONNECTOR_REF);
-  DecoratorConnectorManager.getInstance().removeConnector(JdiConnectorRefs.INJECT_PARAMETER_CONNECTOR_REF, context);
+  JcadContextManager.getInstance().removeContext(JdiConnectorRefs.INJECTABLE_CONNECTOR_REF);
+  DecoratorConnectorManager.getInstance().removeConnector(JdiConnectorRefs.INJECTABLE_CONNECTOR_REF, context);
   context = null;
 }

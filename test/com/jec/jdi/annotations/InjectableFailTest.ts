@@ -14,18 +14,16 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
-import {InjectParams} from "../../../src/com/jec/jdi/annotations/core/InjectParams";
-import {InjectableParams} from "../../../src/com/jec/jdi/annotations/core/InjectableParams";
+import "mocha";
+import {expect} from "chai";
 
-export const QUALIFIER:string = "test";
-export const RETENTION:Array<string> = ["TEST"];
+// Utilities:
+import * as utils from "../../../../../utils/test-utils/utilities/InjectableFailTestUtils";
 
-export const INJECT_PARAMS:InjectParams = {
-  qualifier: QUALIFIER,
-  retention: RETENTION
-};
+// Test:
+describe("@Injectable", ()=> {
 
-export const INJECTABLE_PARAMS:InjectableParams = {
-  qualifier: QUALIFIER,
-  retention: RETENTION
-};
+  it("should throw an error since no context has been declared for this decorator", function() {
+    expect(utils.buildClassRef).to.throw(Error);
+  });
+});

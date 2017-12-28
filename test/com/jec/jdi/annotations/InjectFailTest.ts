@@ -23,11 +23,11 @@ import * as utils from "../../../../../utils/test-utils/utilities/InjectFailTest
 // Test:
 describe("@Inject", ()=> {
 
-  it("Injecting a property should throw an error since no context has been declared for this decorator", function() {
+  it("injecting a property should throw an error since no context has been declared for this decorator", function() {
     expect(utils.buildPropertyClassRef).to.throw(Error);
   });
   
-  it("Injecting a parameter should throw an error since no context has been declared for this decorator", function() {
+  it("injecting a parameter should throw an error since no context has been declared for this decorator", function() {
     expect(utils.buildParameterClassRef).to.throw(Error);
   });
 });

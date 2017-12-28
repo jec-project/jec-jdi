@@ -24,13 +24,13 @@ import {JdiConnectorRefs} from "../../../../../src/com/jec/jdi/jcad/JdiConnector
 describe("JdiConnectorRefs", ()=> {
 
   describe("#INJECT_PARAMETER_CONNECTOR_REF", ()=> {
-    it("INJECT_PARAMETER_CONNECTOR_REF should return 'com.jec.commons.jdi.annotations.Inject", function() {
+    it("INJECT_PARAMETER_CONNECTOR_REF should return 'com.jec.commons.jdi.annotations.Inject#parameter", function() {
       expect(JdiConnectorRefs.INJECT_PARAMETER_CONNECTOR_REF).to.equal("com.jec.commons.jdi.annotations.Inject#parameter");
     });
   });
   
   describe("#INJECT_PROPERTY_CONNECTOR_REF", ()=> {
-    it("INJECT_PROPERTY_CONNECTOR_REF should return 'com.jec.commons.jdi.annotations.Inject", function() {
+    it("INJECT_PROPERTY_CONNECTOR_REF should return 'com.jec.commons.jdi.annotations.Inject#property", function() {
       expect(JdiConnectorRefs.INJECT_PROPERTY_CONNECTOR_REF).to.equal("com.jec.commons.jdi.annotations.Inject#property");
     });
   });
