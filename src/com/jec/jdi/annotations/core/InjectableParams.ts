@@ -40,4 +40,9 @@ export interface InjectableParams {
    * The main qualifier for the decorated bean.
    */
   qualifier?:string;
+
+  /**
+   * Provides instantiation policy for the decorated bean.
+   */
+  scope?:string;
 }

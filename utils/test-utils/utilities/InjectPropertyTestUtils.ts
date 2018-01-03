@@ -15,7 +15,7 @@
 //   limitations under the License.
 
 import {ClassLoader, JcadContextFactory, JcadContext, DecoratorConnectorManager,
-        JcadContextManager, Decorator} from "jec-commons";
+        JcadContextManager, Decorator, DefaultClassLoader} from "jec-commons";
 import {JdiConnector} from "../classes/JdiConnector";
 import {JdiConnectorRefs} from "../../../src/com/jec/jdi/jcad/JdiConnectorRefs";
 import {InjectParams} from "../../../src/com/jec/jdi/annotations/core/InjectParams";
@@ -25,7 +25,7 @@ import {InjectParams} from "../../../src/com/jec/jdi/annotations/core/InjectPara
 */
 
 // Utilities:
-const LOADER:ClassLoader = new ClassLoader();
+const LOADER:ClassLoader = new DefaultClassLoader();
 const VALID_CLASS:string = process.cwd() + "/utils/test-utils/classes/InjectPropertyTestClass";
 export const params:any = require("./ParamUtils");
 export const buildClassRef:Function = function():void {

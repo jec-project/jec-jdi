@@ -14,16 +14,17 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
-import {ClassLoader} from "jec-commons";
+import {ClassLoader, DefaultClassLoader} from "jec-commons";
 
 /*!
  * This module constains utilities used by the InjectFailTest test suite.
  */
 
 // Utilities:
-const PROPERTY_INJECT_CLASS:string = process.cwd() + "/utils/test-utils/classes/InjectPropertyTestClass";
-const PARAMETER_INJECT_CLASS:string = process.cwd() + "/utils/test-utils/classes/InjectParameterTestClass";
-const LOADER:ClassLoader = new ClassLoader();
+const CWD:string = process.cwd();
+const PROPERTY_INJECT_CLASS:string = CWD + "/utils/test-utils/classes/InjectPropertyTestClass";
+const PARAMETER_INJECT_CLASS:string = CWD + "/utils/test-utils/classes/InjectParameterTestClass";
+const LOADER:ClassLoader = new DefaultClassLoader();
 export const buildPropertyClassRef:Function = function():void {
   let ClassRef:any = LOADER.loadClass(PROPERTY_INJECT_CLASS);
   new ClassRef();
