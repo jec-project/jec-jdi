@@ -20,5 +20,10 @@ export {Inject} from "./jdi/annotations/Inject";
 export {Injectable} from "./jdi/annotations/Injectable";
 //--> com/jec/jdi/exceptions
 export {JdiError} from "./jdi/exceptions/JdiError";
+//--> com/jec/commons/inject
+export {BeanManager} from "./jdi/inject/BeanManager";
+export {JDI} from "./jdi/inject/JDI";
+export {JdiContainer} from "./jdi/inject/JdiContainer";
+export {JdiContext} from "./jdi/inject/JdiContext";
 //--> com/jec/jdi/jcad
 export {JdiConnectorRefs} from "./jdi/jcad/JdiConnectorRefs";
