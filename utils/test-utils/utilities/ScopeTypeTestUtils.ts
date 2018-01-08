@@ -14,15 +14,10 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
-/**
- * Interface implemented by a JDI context.
+/*!
+ * This module constains utilities used by the ScopeTypeTest test suite.
  */
-export interface JdiContext {
 
-  /**
-   * Returns the scope  for this context.
-   * 
-   * @return {string} a value defined by the <code>ScopeType</code> Enum.
-   */
-  getScope():string;
-};
+export const APPLICATION:string = "application";
+export const SESSION:string = "session";
+export const REQUEST:string = "request";

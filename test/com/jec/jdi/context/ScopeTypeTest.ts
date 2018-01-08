@@ -14,15 +14,27 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
-/**
- * Interface implemented by a JDI context.
- */
-export interface JdiContext {
+import "mocha";
+import {expect} from "chai";
 
-  /**
-   * Returns the scope  for this context.
-   * 
-   * @return {string} a value defined by the <code>ScopeType</code> Enum.
-   */
-  getScope():string;
-};
+// Class to test:
+import {ScopeType} from "../../../../../src/com/jec/jdi/context/ScopeType";
+
+// Utilities:
+import * as utils from "../../../../../utils/test-utils/utilities/ScopeTypeTestUtils";
+
+// Test:
+describe("ScopeType", ()=> {
+
+  it("ScopeType.APPLICATION should return 'application'", function() {
+    expect(ScopeType.APPLICATION).to.equal(utils.APPLICATION);
+  });
+  
+  it("ScopeType.SESSION should return 'session'", function() {
+    expect(ScopeType.SESSION).to.equal(utils.SESSION);
+  });
+  
+  it("ScopeType.REQUEST should return 'request'", function() {
+    expect(ScopeType.REQUEST).to.equal(utils.REQUEST);
+  });
+});

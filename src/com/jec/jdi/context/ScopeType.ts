@@ -15,14 +15,26 @@
 //   limitations under the License.
 
 /**
- * Interface implemented by a JDI context.
+ * The <code>ScopeType</code> Enum provides values that specify the different
+ * scopes of a the JEC container in JDI context.
  */
-export interface JdiContext {
+export enum ScopeType {
+  
+  /**
+   * Defines the scope for beans that are shared across all users’ interactions 
+   * with a web application.
+   */
+  APPLICATION = "application",
 
   /**
-   * Returns the scope  for this context.
-   * 
-   * @return {string} a value defined by the <code>ScopeType</code> Enum.
+   * Defines the scope for beans that leave during user’s interaction with
+   * a web application across multiple HTTP requests.
    */
-  getScope():string;
+  SESSION = "session",
+
+  /**
+   * Defines the scope for beans that leave during user’s interaction with
+   * a web application in a single HTTP request.
+   */
+  REQUEST = "request"
 };

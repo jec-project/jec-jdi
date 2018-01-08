@@ -18,6 +18,8 @@ export {InjectableParams} from "./jdi/annotations/core/InjectableParams";
 //--> com/jec/jdi/annotations
 export {Inject} from "./jdi/annotations/Inject";
 export {Injectable} from "./jdi/annotations/Injectable";
+//--> com/jec/jdi/context
+export {ScopeType} from "./jdi/context/ScopeType";
 //--> com/jec/jdi/exceptions
 export {JdiError} from "./jdi/exceptions/JdiError";
 //--> com/jec/commons/inject
