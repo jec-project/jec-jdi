@@ -14,19 +14,22 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
-import {Scope} from "../context/Scope";
+import "mocha";
+import {expect} from "chai";
 
-/**
- * Interface implemented by a JDI context.
- */
-export interface JdiContext {
+// Class to test:
+import {AbstractScope} from "../../../../../src/com/jec/jdi/context/AbstractScope";
 
-  /**
-   * Returns the scope  for this context.
-   * 
-   * @return {Scope} the scope  for this context.
-   */
-  getScope():Scope;
+// Utilities:
+import * as utils from "../../../../../utils/test-utils/utilities/AbstractScopeTestUtils";
 
-  //getBean(id:string):any;
-};
+// Test:
+describe("AbstractScope", ()=> {
+
+  describe("#getType()", ()=> {
+    let scope:AbstractScope = utils.buildAbstractScope();
+    it("should retrieve the same value as passed to the constructor", function() {
+      expect(scope.getType()).to.equal(utils.TYPE);
+    });
+  });
+});

@@ -14,19 +14,20 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
-import {Scope} from "../context/Scope";
+import "mocha";
+import {expect} from "chai";
+import {ScopeType} from "../../../../../src/com/jec/jdi/context/ScopeType";
 
-/**
- * Interface implemented by a JDI context.
- */
-export interface JdiContext {
+// Class to test:
+import {RequestScoped} from "../../../../../src/com/jec/jdi/context/RequestScoped";
 
-  /**
-   * Returns the scope  for this context.
-   * 
-   * @return {Scope} the scope  for this context.
-   */
-  getScope():Scope;
+// Test:
+describe("RequestScoped", ()=> {
 
-  //getBean(id:string):any;
-};
+  describe("#getType()", ()=> {
+    let scope:RequestScoped = new RequestScoped();
+    it("should return ScopeType.REQUEST", function() {
+      expect(scope.getType()).to.equal(ScopeType.REQUEST);
+    });
+  });
+});

@@ -17,16 +17,14 @@
 import {Scope} from "../context/Scope";
 
 /**
- * Interface implemented by a JDI context.
+ * Represents a bean in the JDI specification.
  */
-export interface JdiContext {
-
+export interface Bean {
+  
   /**
-   * Returns the scope  for this context.
+   * Obtains the scope of the bean.
    * 
-   * @return {Scope} the scope  for this context.
+   * @return {Scope} the scope of the bean.
    */
   getScope():Scope;
-
-  //getBean(id:string):any;
 };

@@ -14,19 +14,16 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
-import {Scope} from "../context/Scope";
-
 /**
- * Interface implemented by a JDI context.
+ * Represents the scope for a <code>JdiContext</code> object.
  */
-export interface JdiContext {
-
+export interface Scope {
+  
   /**
-   * Returns the scope  for this context.
+   * Obtains the scope type of the <code>JdiContext</code> object. Possible
+   * values are defined by the <code>ScopeType</code> Enum.
    * 
-   * @return {Scope} the scope  for this context.
+   * @return {string} the scope type of the <code>JdiContext</code> object.
    */
-  getScope():Scope;
-
-  //getBean(id:string):any;
+  getType():string;
 };

@@ -19,11 +19,18 @@ export {InjectableParams} from "./jdi/annotations/core/InjectableParams";
 export {Inject} from "./jdi/annotations/Inject";
 export {Injectable} from "./jdi/annotations/Injectable";
 //--> com/jec/jdi/context
+export {AbstractScope} from "./jdi/context/AbstractScope";
+export {ApplicationScoped} from "./jdi/context/ApplicationScoped";
+export {RequestScoped} from "./jdi/context/RequestScoped";
+export {Scope} from "./jdi/context/Scope";
 export {ScopeType} from "./jdi/context/ScopeType";
+export {SessionScoped} from "./jdi/context/SessionScoped";
 //--> com/jec/jdi/exceptions
 export {JdiError} from "./jdi/exceptions/JdiError";
 //--> com/jec/commons/inject
+export {Bean} from "./jdi/inject/Bean";
 export {BeanManager} from "./jdi/inject/BeanManager";
+export {InjectionPoint} from "./jdi/inject/InjectionPoint";
 export {JDI} from "./jdi/inject/JDI";
 export {JdiContainer} from "./jdi/inject/JdiContainer";
 export {JdiContext} from "./jdi/inject/JdiContext";

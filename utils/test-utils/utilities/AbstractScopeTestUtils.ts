@@ -14,19 +14,21 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
-import {Scope} from "../context/Scope";
+import {AbstractScope} from "../../../src/com/jec/jdi/context/AbstractScope";
+import {ScopeType} from "../../../src/com/jec/jdi/context/ScopeType";
 
-/**
- * Interface implemented by a JDI context.
+/*!
+ * This module constains utilities used by the AbstractScopeTest test suite.
  */
-export interface JdiContext {
 
-  /**
-   * Returns the scope  for this context.
-   * 
-   * @return {Scope} the scope  for this context.
-   */
-  getScope():Scope;
-
-  //getBean(id:string):any;
+// Utilities:
+export const TYPE:string = ScopeType.APPLICATION;
+class AbstractScopeImpl extends AbstractScope {
+  constructor(){
+    super(TYPE);
+  }
+}
+export const buildAbstractScope:Function = function():AbstractScope {
+  let scope:AbstractScope = new AbstractScopeImpl();
+  return scope;
 };

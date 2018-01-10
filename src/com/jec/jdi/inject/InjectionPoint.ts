@@ -14,19 +14,19 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
-import {Scope} from "../context/Scope";
+import {Bean} from "./Bean";
 
 /**
- * Interface implemented by a JDI context.
+ * Provides access to metadata about an injection point in the JDI
+ * specification.
  */
-export interface JdiContext {
-
+export interface InjectionPoint {
+  
   /**
-   * Returns the scope  for this context.
+   * Get the <code>Bean</code> object representing the bean that defines the
+   * injection point.
    * 
-   * @return {Scope} the scope  for this context.
+   * @return {Bean} the bean that defines the injection point.
    */
-  getScope():Scope;
-
-  //getBean(id:string):any;
+  getBean():Bean;
 };

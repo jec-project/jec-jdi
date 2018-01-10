@@ -14,19 +14,23 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
-import {Scope} from "../context/Scope";
+import {Scope} from "./Scope";
+import {AbstractScope} from "./AbstractScope";
+import {ScopeType} from "./ScopeType";
 
 /**
- * Interface implemented by a JDI context.
+ * Specifies that a bean is request scoped.
  */
-export interface JdiContext {
+export class RequestScoped extends AbstractScope implements Scope {
+  
+  //////////////////////////////////////////////////////////////////////////////
+  // Constructor function
+  //////////////////////////////////////////////////////////////////////////////
 
   /**
-   * Returns the scope  for this context.
-   * 
-   * @return {Scope} the scope  for this context.
+   * Creates a new <code>RequestScoped</code> instance.
    */
-  getScope():Scope;
-
-  //getBean(id:string):any;
+  constructor(){
+    super(ScopeType.REQUEST);
+  }
 };

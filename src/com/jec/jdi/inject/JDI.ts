@@ -36,6 +36,4 @@ export interface JDI {
    *                       context.
    */
   getBeanManager():BeanManager;
-
-
 };
