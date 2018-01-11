@@ -22,11 +22,21 @@ import {Scope} from "../context/Scope";
 export interface JdiContext {
 
   /**
-   * Returns the scope  for this context.
+   * Returns the scope  for this context object.
    * 
    * @return {Scope} the scope  for this context.
    */
   getScope():Scope;
 
+  /**
+   * Returns a boolean values that indicates whether this context object is 
+   * active (<code>true</code>), or not (<code>false</code>).
+   * 
+   * @return {boolean} <code>true</code> whether this context is active;
+   *                   <code>false</code> otherwhise.
+   */
+  isActive():boolean;
+  
   //getBean(id:string):any;
+
 };

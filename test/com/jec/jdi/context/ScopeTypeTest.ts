@@ -26,6 +26,10 @@ import * as utils from "../../../../../utils/test-utils/utilities/ScopeTypeTestU
 // Test:
 describe("ScopeType", ()=> {
 
+  it("ScopeType.DEPENDENT should return 'dependent'", function() {
+    expect(ScopeType.DEPENDENT).to.equal(utils.DEPENDENT);
+  });
+  
   it("ScopeType.APPLICATION should return 'application'", function() {
     expect(ScopeType.APPLICATION).to.equal(utils.APPLICATION);
   });

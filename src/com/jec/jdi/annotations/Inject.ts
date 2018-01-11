@@ -17,7 +17,8 @@
 import {InjectParams} from "./core/InjectParams";
 import {JdiConnectorRefs} from "../jcad/JdiConnectorRefs";
 import {JdiError} from "../exceptions/JdiError";
-import {JcadContext, JcadContextManager, DecoratorConnectorManager} from "jec-commons";
+import {JcadContext, JcadContextManager, DecoratorConnectorManager,
+        PrimitiveType} from "jec-commons";
 
 ////////////////////////////////////////////////////////////////////////////////
 // JCAD API
@@ -55,7 +56,7 @@ export function Inject(params?:InjectParams):Function {
                     JdiConnectorRefs.INJECT_PROPERTY_CONNECTOR_REF,
                     ctx
                   ).decorate(args[0], args[1], params);
-      } else if(typeof lastArg === "number") {
+      } else if(typeof lastArg === PrimitiveType.NUMBER) {
         ctx = CTXM.getContext(JdiConnectorRefs.INJECT_PARAMETER_CONNECTOR_REF);
         result = DCM.getDecorator(
                   JdiConnectorRefs.INJECT_PARAMETER_CONNECTOR_REF,
@@ -64,8 +65,7 @@ export function Inject(params?:InjectParams):Function {
       } 
     } else {
       throw new JdiError("Invalid injection point: @Inject decorator must be used with class properties or constructor parameters");
-    }
-                      
+    }   
     return result;
   }
 }

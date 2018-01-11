@@ -27,11 +27,6 @@ export interface InjectableParams {
   type?:Symbol;
   
   /**
-   * A list of interface types implemented by the decorated bean.
-   */
-  types?:Array<Symbol>;
-
-  /**
    * The references to the environments where the bean can be instanciated.
    */
   retention?:Array<string>;

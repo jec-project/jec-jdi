@@ -29,4 +29,16 @@ export interface InjectionPoint {
    * @return {Bean} the bean that defines the injection point.
    */
   getBean():Bean;
+
+  /**
+   * Get the required type of injection point.
+   * 
+   * @return {any} the required type of injection point.
+   */
+  getType():any;
+
+  /**
+   * 
+   */
+  getMember():any;
 };

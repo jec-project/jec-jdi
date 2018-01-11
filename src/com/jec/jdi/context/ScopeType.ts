@@ -21,6 +21,11 @@
 export enum ScopeType {
   
   /**
+   * Specifies that a bean belongs to the dependent pseudo-scope.
+   */
+  DEPENDENT = "dependent",
+
+  /**
    * Defines the scope for beans that are shared across all users’ interactions 
    * with a web application.
    */

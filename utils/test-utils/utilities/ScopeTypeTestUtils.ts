@@ -18,6 +18,7 @@
  * This module constains utilities used by the ScopeTypeTest test suite.
  */
 
+export const DEPENDENT:string = "dependent";
 export const APPLICATION:string = "application";
 export const SESSION:string = "session";
 export const REQUEST:string = "request";
