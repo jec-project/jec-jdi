@@ -7,4 +7,6 @@
 
 declare module "jec-jdi" {
 
+import { Member, Parameter } from "jec-commons";
+
 /*PLACEHOLDER*/}

@@ -17,7 +17,7 @@ function Inject(params) {
                 ctx = CTXM.getContext(JdiConnectorRefs_1.JdiConnectorRefs.INJECT_PROPERTY_CONNECTOR_REF);
                 result = DCM.getDecorator(JdiConnectorRefs_1.JdiConnectorRefs.INJECT_PROPERTY_CONNECTOR_REF, ctx).decorate(args[0], args[1], params);
             }
-            else if (typeof lastArg === "number") {
+            else if (typeof lastArg === jec_commons_1.PrimitiveType.NUMBER) {
                 ctx = CTXM.getContext(JdiConnectorRefs_1.JdiConnectorRefs.INJECT_PARAMETER_CONNECTOR_REF);
                 result = DCM.getDecorator(JdiConnectorRefs_1.JdiConnectorRefs.INJECT_PARAMETER_CONNECTOR_REF, ctx).decorate(args[0], args[1], lastArg, params);
             }

@@ -15,6 +15,7 @@
 //   limitations under the License.
 
 import {Bean} from "./Bean";
+import {Member, Parameter} from "jec-commons";
 
 /**
  * Provides access to metadata about an injection point in the JDI
@@ -38,7 +39,12 @@ export interface InjectionPoint {
   getType():any;
 
   /**
+   * Get the <code>Member</code>, or <code>Parameter</code> object that defines 
+   * the element where this injection point is declared.
    * 
+   * @return {Member|Parameter} the <code>Member</code>, or
+   *                            <code>Parameter</code> object that defines the 
+   *                            element where this injection point is declared.
    */
-  getMember():any;
+  getElement():Member|Parameter;
 };
