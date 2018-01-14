@@ -14,24 +14,17 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
-import {Scope} from "../context/Scope";
+import {InvalidInjectionPointError} from "../../../src/com/jec/jdi/exceptions/InvalidInjectionPointError";
 
-/**
- * Represents a bean in the JDI specification.
+/*!
+ * This module constains utilities used by the InvalidInjectionPointErrorTest
+ * test suite.
  */
-export interface Bean {
-  
-  /**
-   * Obtains the scope of the bean.
-   * 
-   * @return {Scope} the scope of the bean.
-   */
-  getScope():Scope;
 
-  /**
-   * Obtains the name of the bean, if it has one.
-   * 
-   * @return {Scope} the name of the bean, or <code>null</code>.
-   */
-  getName():string;
-};
+// Utilities:
+class TestClass {}
+export const buildError = function():InvalidInjectionPointError{
+  let e:InvalidInjectionPointError = new InvalidInjectionPointError(TestClass);
+  return e;
+}
+export const ERROR_MSG:string = "InvalidInjectionPointError: TestClass.js";

@@ -16,7 +16,7 @@
 
 import {InjectParams} from "./core/InjectParams";
 import {JdiConnectorRefs} from "../jcad/JdiConnectorRefs";
-import {JdiError} from "../exceptions/JdiError";
+import {InvalidInjectionPointError} from "../exceptions/InvalidInjectionPointError";
 import {JcadContext, JcadContextManager, DecoratorConnectorManager,
         PrimitiveType} from "jec-commons";
 
@@ -64,7 +64,7 @@ export function Inject(params?:InjectParams):Function {
                 ).decorate(args[0], args[1], lastArg, params);
       } 
     } else {
-      throw new JdiError("Invalid injection point: @Inject decorator must be used with class properties or constructor parameters");
+      throw new InvalidInjectionPointError(args[0]);
     }   
     return result;
   }

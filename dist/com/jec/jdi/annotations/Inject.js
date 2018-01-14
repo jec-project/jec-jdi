@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const JdiConnectorRefs_1 = require("../jcad/JdiConnectorRefs");
-const JdiError_1 = require("../exceptions/JdiError");
+const InvalidInjectionPointError_1 = require("../exceptions/InvalidInjectionPointError");
 const jec_commons_1 = require("jec-commons");
 const DCM = jec_commons_1.DecoratorConnectorManager.getInstance();
 const CTXM = jec_commons_1.JcadContextManager.getInstance();
@@ -23,7 +23,7 @@ function Inject(params) {
             }
         }
         else {
-            throw new JdiError_1.JdiError("Invalid injection point: @Inject decorator must be used with class properties or constructor parameters");
+            throw new InvalidInjectionPointError_1.InvalidInjectionPointError(args[0]);
         }
         return result;
     };

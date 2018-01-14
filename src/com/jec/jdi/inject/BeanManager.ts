@@ -14,10 +14,29 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
+import {InjectionPoint} from "./InjectionPoint";
+import {Bean} from "./Bean";
+
 /**
  * Allows a portable extension to interact directly with the JEC container.
  * Provides operations for obtaining contextual references for beans.
  */
 export interface BeanManager {
   
+  /**
+   * Adds the specified bean to this <code>BeanManager</code> object.
+   * 
+   * @param {Bean} bean the bean to add to this <code>BeanManager</code> object.
+   */
+  addBean(bean:Bean):void;
+
+  /**
+   * Returns a set of beans that resolve the specified injection point.
+   * 
+   * @param {InjectionPoint} injectionPoint the injection point for which to
+   *                                        retrieve beans.
+   * @return {Set<Bean>} the collection of beans that resolve the specified
+   *                     injection point.
+   */
+  getBeans(injectionPoint:InjectionPoint):Set<Bean>;
 };

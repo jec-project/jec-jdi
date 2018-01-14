@@ -1,3 +1,4 @@
+
 //  DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
 //
 //   Copyright 2016-2018 Pascal ECHEMANN.
@@ -14,24 +15,25 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
-import {Scope} from "../context/Scope";
+import {JdiError} from "./JdiError";
 
 /**
- * Represents a bean in the JDI specification.
+ * The <code>InvalidInjectionPointError</code> represents an exception thrown by
+ * a JDI container when an injection point is not valid.
  */
-export interface Bean {
-  
-  /**
-   * Obtains the scope of the bean.
-   * 
-   * @return {Scope} the scope of the bean.
-   */
-  getScope():Scope;
+export class InvalidInjectionPointError extends JdiError {
+
+  ////////////////////////////////////////////////////////////////////////////
+  // Constructor function
+  ////////////////////////////////////////////////////////////////////////////
 
   /**
-   * Obtains the name of the bean, if it has one.
+   * Creates a new <code>InvalidInjectionPointError</code> instance.
    * 
-   * @return {Scope} the name of the bean, or <code>null</code>.
+   * @param {any} target the reference to the object that defined an invalid
+   *                     injection point.
    */
-  getName():string;
-};
+  constructor(target:any) {
+    super(`InvalidInjectionPointError: ${target.name}.js` );
+  }
+}

@@ -1,3 +1,4 @@
+
 //  DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
 //
 //   Copyright 2016-2018 Pascal ECHEMANN.
@@ -14,7 +15,37 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
+import {BeanManager} from "./BeanManager";
+
 /**
  * Interface implemented by a JDI container.
  */
-export interface JdiContainer { };
+export interface JdiContainer {
+
+  /**
+   * Returns the unique ID fror thid container.
+   * 
+   * @return {string} the unique ID fror thid container.
+   */
+  getId():string;
+
+  /**
+   * Returns the <code>BeanManager</code> object for the specified key.
+   * 
+   * @param {string} key the key used to retreive the <code>BeanManager</code>
+   *                     object.
+   * @return {BeanManager} the <code>BeanManager</code> object registered with
+   *                       the specified key.
+   */
+  getBeanManager(key:string):BeanManager;
+
+  /**
+   * Registers a <code>BeanManager</code> object with the specified key.
+   * 
+   * @param {string} beanManager the <code>BeanManager</code> object to
+   *                             register.
+   * @param {string} key the key used to retreive the registered 
+   *                     <code>BeanManager</code> object.
+   */
+  setBeanManager(beanManager:BeanManager, key:string):void;
+};
