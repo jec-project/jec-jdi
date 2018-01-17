@@ -40,4 +40,9 @@ export interface InjectableParams {
    * Provides instantiation policy for the decorated bean.
    */
   scope?:string;
+
+  /**
+   * The name reference for the decorated bean.
+   */
+  name?:string;
 }

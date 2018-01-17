@@ -35,4 +35,9 @@ export interface InjectParams {
    * The main qualifier for the injected bean.
    */
   qualifier?:string;
+  
+  /**
+   * The name reference for the injected bean.
+   */
+  name?:string;
 }
