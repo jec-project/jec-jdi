@@ -31,7 +31,21 @@ export interface Bean {
   /**
    * Obtains the name of the bean, if it has one.
    * 
-   * @return {Scope} the name of the bean, or <code>null</code>.
+   * @return {string} the name of the bean, or <code>null</code>.
    */
   getName():string;
+  
+  /**
+   * Obtains the bean class of this bean.
+   * 
+   * @return {any} the bean class of this bean.
+   */
+  getBeanClass():any;
+  
+  /**
+   * Obtains the bean types of the bean.
+   * 
+   * @return {Set<any>} the bean types of the bean.
+   */
+  getTypes():Set<any>;
 };
