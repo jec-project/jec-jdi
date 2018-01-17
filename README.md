@@ -41,14 +41,16 @@ export class HelloWorld {
 }
 ```
 
-Because of TypeScript restrictions, you must use the `Symbol` trick to directly use interfaces as type reference for an injection point:
+Because of TypeScript restrictions, you must use the `Interface` construct to directly use interfaces as type reference for an injection point:
 
 ```javascript
+import {Interface} from "jec-commons";
+
 export interface GreetingService {
     sayHelloWorld():string;
 }
 
-export const GreetingService:Symbol = Symbol("services.GreetingService");
+export const GreetingService = Interface("services.GreetingService");
 ```
 
 For a complete list of available components, please refer to the [API Reference](#api-reference) documentation.

@@ -14,6 +14,8 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
+import {Interface} from "jec-commons";
+
 /**
  * The <code>InjectableParams</code> interface defines the API you must 
  * implement to create objects passed as parameter of the JEC
@@ -24,7 +26,7 @@ export interface InjectableParams {
   /**
    * The main interface type implemented by the decorated bean.
    */
-  type?:Symbol;
+  type?:Interface;
   
   /**
    * The references to the environments where the bean can be instanciated.
