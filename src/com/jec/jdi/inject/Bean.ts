@@ -48,4 +48,9 @@ export interface Bean {
    * @return {Set<any>} the bean types of the bean.
    */
   getTypes():Set<any>;
+  
+  /**
+   * Returns the full name of the bean class.
+   */
+  getQualifiedClassName():string;
 };

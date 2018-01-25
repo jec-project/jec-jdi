@@ -47,4 +47,9 @@ export interface InjectionPoint {
    *                            element where this injection point is declared.
    */
   getElement():Member|Parameter;
+
+  /**
+   * Returns the full name of the class that defines the injection point.
+   */
+  getQualifiedClassName():string;
 };
