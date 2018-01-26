@@ -14,7 +14,7 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
-import {Scope} from "../context/Scope";
+import {Locale} from "jec-commons";
 
 /**
  * Interface implemented by a JDI context.
@@ -22,21 +22,18 @@ import {Scope} from "../context/Scope";
 export interface JdiContext {
 
   /**
-   * Returns the scope  for this context object.
+   * Returns the path to the local directory where the domain associated with
+   * this context is deployed.
    * 
-   * @return {Scope} the scope  for this context.
+   * @return {string} the path to the domain local directory.
    */
-  getScope():Scope;
+  getDomainPath():string;
 
   /**
-   * Returns a boolean values that indicates whether this context object is 
-   * active (<code>true</code>), or not (<code>false</code>).
+   * Returns the <code>Locale</code> object associated with this context.
    * 
-   * @return {boolean} <code>true</code> whether this context is active;
-   *                   <code>false</code> otherwhise.
+   * @return {Locale} the <code>Locale</code> object associated with this
+   *                  context.
    */
-  isActive():boolean;
-  
-  //getBean(id:string):any;
-
+  getLocale():Locale;
 };
