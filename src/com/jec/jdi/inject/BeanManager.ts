@@ -39,4 +39,12 @@ export interface BeanManager {
    *                     injection point.
    */
   getBeans(injectionPoint:InjectionPoint):Set<Bean>;
+
+  /**
+   * Adds the specified injection point to this <code>BeanManager</code> object.
+   * 
+   * @param {InjectionPoint} injectionPoint the injection to add to this
+   *                                        <code>BeanManager</code> object.
+   */
+  addInjectionPoint(injectionPoint:InjectionPoint):void;
 };
