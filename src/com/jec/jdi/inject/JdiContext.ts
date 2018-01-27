@@ -14,26 +14,7 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
-import {Locale} from "jec-commons";
-
 /**
  * Interface implemented by a JDI context.
  */
-export interface JdiContext {
-
-  /**
-   * Returns the path to the local directory where the domain associated with
-   * this context is deployed.
-   * 
-   * @return {string} the path to the domain local directory.
-   */
-  getDomainPath():string;
-
-  /**
-   * Returns the <code>Locale</code> object associated with this context.
-   * 
-   * @return {Locale} the <code>Locale</code> object associated with this
-   *                  context.
-   */
-  getLocale():Locale;
-};
+export interface JdiContext {};
