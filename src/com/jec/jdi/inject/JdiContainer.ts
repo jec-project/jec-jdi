@@ -30,22 +30,18 @@ export interface JdiContainer {
   getId():string;
 
   /**
-   * Returns the <code>BeanManager</code> object for the specified key.
+   * Returns the <code>BeanManager</code> object for the current context.
    * 
-   * @param {string} key the key used to retreive the <code>BeanManager</code>
-   *                     object.
-   * @return {BeanManager} the <code>BeanManager</code> object registered with
-   *                       the specified key.
+   * @return {BeanManager} the <code>BeanManager</code> object for the current
+   *                       context.
    */
-  getBeanManager(key:string):BeanManager;
+  getBeanManager():BeanManager;
 
   /**
-   * Registers a <code>BeanManager</code> object with the specified key.
+   * Registers a <code>BeanManager</code> object.
    * 
    * @param {string} beanManager the <code>BeanManager</code> object to
    *                             register.
-   * @param {string} key the key used to retreive the registered 
-   *                     <code>BeanManager</code> object.
    */
-  setBeanManager(beanManager:BeanManager, key:string):void;
+  setBeanManager(beanManager:BeanManager):void;
 };
