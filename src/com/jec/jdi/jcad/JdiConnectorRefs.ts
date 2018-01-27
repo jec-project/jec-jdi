@@ -29,10 +29,9 @@ export enum JdiConnectorRefs {
 
   /**
    * Defines the reference for connectors that must be used when the
-   * <code>@Inject</code> decorator defines a 'property' injection point.
+   * <code>@Inject</code> decorator defines a 'field' injection point.
    */
-  INJECT_PROPERTY_CONNECTOR_REF =
-                              "com.jec.commons.jdi.annotations.Inject#property",
+  INJECT_FIELD_CONNECTOR_REF = "com.jec.commons.jdi.annotations.Inject#field",
 
   /**
    * Defines the reference for connectors that must be used to interact with the

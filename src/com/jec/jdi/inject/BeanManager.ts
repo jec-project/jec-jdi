@@ -31,6 +31,32 @@ export interface BeanManager {
   addBean(bean:Bean):void;
 
   /**
+   * Returns a set that contains all beans registered in this bean manager.
+   * 
+   * @return {Set<Bean>} the collection of beans that are registered in this
+   *                     bean manager.
+   */
+  getBeans():Set<Bean>;
+
+  /**
+   * Returns a set of beans that resolve the specified bean name.
+   * 
+   * @param {string} name the bean name for which to retrieve beans.
+   * @return {Set<Bean>} the collection of beans that resolve the specified
+   *                     bean name.
+   */
+  getBeansByName(name:string):Set<Bean>;
+
+  /**
+   * Returns a set of beans that resolve the specified class type.
+   * 
+   * @param {any} type the class type for which to retrieve beans.
+   * @return {Set<Bean>} the collection of beans that resolve the specified
+   *                     class type.
+   */
+  getBeansByType(type:any):Set<Bean>;
+
+  /**
    * Returns a set of beans that resolve the specified injection point.
    * 
    * @param {InjectionPoint} injectionPoint the injection point for which to
@@ -38,7 +64,7 @@ export interface BeanManager {
    * @return {Set<Bean>} the collection of beans that resolve the specified
    *                     injection point.
    */
-  getBeans(injectionPoint:InjectionPoint):Set<Bean>;
+  getBeansByInjectionPoint(injectionPoint:InjectionPoint):Set<Bean>;
 
   /**
    * Adds the specified injection point to this <code>BeanManager</code> object.

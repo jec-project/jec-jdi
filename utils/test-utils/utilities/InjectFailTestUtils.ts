@@ -22,11 +22,11 @@ import {ClassLoader, DefaultClassLoader} from "jec-commons";
 
 // Utilities:
 const CWD:string = process.cwd();
-const PROPERTY_INJECT_CLASS:string = CWD + "/utils/test-utils/classes/InjectPropertyTestClass";
+const FIELD_INJECT_CLASS:string = CWD + "/utils/test-utils/classes/InjectFieldTestClass";
 const PARAMETER_INJECT_CLASS:string = CWD + "/utils/test-utils/classes/InjectParameterTestClass";
 const LOADER:ClassLoader = new DefaultClassLoader();
-export const buildPropertyClassRef:Function = function():void {
-  let ClassRef:any = LOADER.loadClass(PROPERTY_INJECT_CLASS);
+export const buildFieldClassRef:Function = function():void {
+  let ClassRef:any = LOADER.loadClass(FIELD_INJECT_CLASS);
   new ClassRef();
 };
 export const buildParameterClassRef:Function = function():void {

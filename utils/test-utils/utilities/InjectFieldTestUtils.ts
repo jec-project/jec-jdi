@@ -21,12 +21,12 @@ import {JdiConnectorRefs} from "../../../src/com/jec/jdi/jcad/JdiConnectorRefs";
 import {InjectParams} from "../../../src/com/jec/jdi/annotations/core/InjectParams";
 
 /*!
-* This module constains utilities used by the InjectPropertyTest test suite.
+* This module constains utilities used by the InjectFieldTest test suite.
 */
 
 // Utilities:
 const LOADER:ClassLoader = new DefaultClassLoader();
-const VALID_CLASS:string = process.cwd() + "/utils/test-utils/classes/InjectPropertyTestClass";
+const VALID_CLASS:string = process.cwd() + "/utils/test-utils/classes/InjectFieldTestClass";
 export const params:any = require("./ParamUtils");
 export const buildClassRef:Function = function():void {
   let ClassRef:any = LOADER.loadClass(VALID_CLASS);
@@ -39,14 +39,14 @@ export const KEY:string = "bean";
 export const INJECT_DECORATOR:Decorator = new InjectDecorator();
 export const initContext:Function = function():JcadContext {
   let factory:JcadContextFactory = new JcadContextFactory();
-  let connector = new JdiConnector(JdiConnectorRefs.INJECT_PROPERTY_CONNECTOR_REF, INJECT_DECORATOR);
+  let connector = new JdiConnector(JdiConnectorRefs.INJECT_FIELD_CONNECTOR_REF, INJECT_DECORATOR);
   let context:JcadContext = factory.create();
   DecoratorConnectorManager.getInstance().addConnector(connector, context);
-  JcadContextManager.getInstance().addContext(JdiConnectorRefs.INJECT_PROPERTY_CONNECTOR_REF, context);
+  JcadContextManager.getInstance().addContext(JdiConnectorRefs.INJECT_FIELD_CONNECTOR_REF, context);
   return context;
 }
 export const resetContext:Function = function(context:JcadContext):void {
-  JcadContextManager.getInstance().removeContext(JdiConnectorRefs.INJECT_PROPERTY_CONNECTOR_REF);
-  DecoratorConnectorManager.getInstance().removeConnector(JdiConnectorRefs.INJECT_PROPERTY_CONNECTOR_REF, context);
+  JcadContextManager.getInstance().removeContext(JdiConnectorRefs.INJECT_FIELD_CONNECTOR_REF);
+  DecoratorConnectorManager.getInstance().removeConnector(JdiConnectorRefs.INJECT_FIELD_CONNECTOR_REF, context);
   context = null;
 }

@@ -51,9 +51,9 @@ export function Inject(params?:InjectParams):Function {
     if(argLen === 3) {
       lastArg = args[2];
       if(lastArg === undefined) {
-        ctx = CTXM.getContext(JdiConnectorRefs.INJECT_PROPERTY_CONNECTOR_REF);
+        ctx = CTXM.getContext(JdiConnectorRefs.INJECT_FIELD_CONNECTOR_REF);
         result = DCM.getDecorator(
-                    JdiConnectorRefs.INJECT_PROPERTY_CONNECTOR_REF,
+                    JdiConnectorRefs.INJECT_FIELD_CONNECTOR_REF,
                     ctx
                   ).decorate(args[0], args[1], params);
       } else if(typeof lastArg === PrimitiveType.NUMBER) {

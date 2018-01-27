@@ -24,14 +24,14 @@ import {DecoratorConnectorManager, JcadContextManager, JcadContext} from "jec-co
 import * as InjectAnnotation from "../../../../../src/com/jec/jdi/annotations/Inject";
 
 // Utilities:
-import * as utils from "../../../../../utils/test-utils/utilities/InjectPropertyTestUtils";
+import * as utils from "../../../../../utils/test-utils/utilities/InjectFieldTestUtils";
 
 // Chai declarations:
 const expect:any = chai.expect;
 chai.use(spies);
 
 // Test:
-describe("Inject#property", ()=> {
+describe("Inject#field", ()=> {
 
   let context:JcadContext = null;
 
@@ -54,12 +54,12 @@ describe("Inject#property", ()=> {
     let decoratorSpy:any = chai.spy.on(utils.INJECT_DECORATOR, "decorate");
     let annotationSpy:any = chai.spy.on(InjectAnnotation, "Inject");
 
-    it("should invoke the JcadContextManager with the JdiConnectorRefs.INJECT_PROPERTY_CONNECTOR_REF reference", function() {
-      expect(ctxmSpy).to.have.been.called.with(JdiConnectorRefs.INJECT_PROPERTY_CONNECTOR_REF);
+    it("should invoke the JcadContextManager with the JdiConnectorRefs.INJECT_FIELD_CONNECTOR_REF reference", function() {
+      expect(ctxmSpy).to.have.been.called.with(JdiConnectorRefs.INJECT_FIELD_CONNECTOR_REF);
     });
     
-    it("should invoke the DecoratorConnectorManager with the JdiConnectorRefs.INJECT_PROPERTY_CONNECTOR_REF reference and the correct JCAD context", function() {
-      expect(dcmSpy).to.have.been.called.with(JdiConnectorRefs.INJECT_PROPERTY_CONNECTOR_REF, context);
+    it("should invoke the DecoratorConnectorManager with the JdiConnectorRefs.INJECT_FIELD_CONNECTOR_REF reference and the correct JCAD context", function() {
+      expect(dcmSpy).to.have.been.called.with(JdiConnectorRefs.INJECT_FIELD_CONNECTOR_REF, context);
     });
     
     it("should invoke the annotation decorator with the right parameters", function() {

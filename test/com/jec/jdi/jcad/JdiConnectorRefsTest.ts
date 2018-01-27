@@ -29,9 +29,9 @@ describe("JdiConnectorRefs", ()=> {
     });
   });
   
-  describe("#INJECT_PROPERTY_CONNECTOR_REF", ()=> {
-    it("INJECT_PROPERTY_CONNECTOR_REF should return 'com.jec.commons.jdi.annotations.Inject#property", function() {
-      expect(JdiConnectorRefs.INJECT_PROPERTY_CONNECTOR_REF).to.equal("com.jec.commons.jdi.annotations.Inject#property");
+  describe("#INJECT_FIELD_CONNECTOR_REF", ()=> {
+    it("INJECT_FIELD_CONNECTOR_REF should return 'com.jec.commons.jdi.annotations.Inject#field", function() {
+      expect(JdiConnectorRefs.INJECT_FIELD_CONNECTOR_REF).to.equal("com.jec.commons.jdi.annotations.Inject#field");
     });
   });
   
