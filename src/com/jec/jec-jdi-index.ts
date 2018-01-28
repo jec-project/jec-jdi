@@ -28,6 +28,7 @@ export {SessionScoped} from "./jdi/context/SessionScoped";
 //--> com/jec/jdi/exceptions
 export {InvalidInjectionPointError} from "./jdi/exceptions/InvalidInjectionPointError";
 export {JdiError} from "./jdi/exceptions/JdiError";
+export {UnsatisfiedDependencyError} from "./jdi/exceptions/UnsatisfiedDependencyError";
 //--> com/jec/commons/inject
 export {Bean} from "./jdi/inject/Bean";
 export {BeanManager} from "./jdi/inject/BeanManager";

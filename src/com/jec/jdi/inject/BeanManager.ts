@@ -65,7 +65,7 @@ export interface BeanManager {
    *                     injection point.
    */
   getBeansByInjectionPoint(injectionPoint:InjectionPoint):Set<Bean>;
-
+  
   /**
    * Adds the specified injection point to this <code>BeanManager</code> object.
    * 
@@ -73,4 +73,12 @@ export interface BeanManager {
    *                                        <code>BeanManager</code> object.
    */
   addInjectionPoint(injectionPoint:InjectionPoint):void;
+
+  /**
+   * Obtains a contextual reference for a certain bean.
+   * 
+   * @param {Bean} bean the <code>Bean</code> object representing the bean.
+   * @return {any} a contextual reference representing the bean
+   */
+  getReference(bean:Bean):any;
 };
