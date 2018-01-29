@@ -34,9 +34,9 @@ export interface InjectParams {
   retention?:Array<string>;
 
   /**
-   * The main qualifier for the injected bean.
+   * The qualifiers for the decorated bean.
    */
-  qualifier?:string;
+  qualifiers?:Array<string>;
   
   /**
    * The name reference for the injected bean.

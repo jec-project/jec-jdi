@@ -26,6 +26,7 @@ export {Scope} from "./jdi/context/Scope";
 export {ScopeType} from "./jdi/context/ScopeType";
 export {SessionScoped} from "./jdi/context/SessionScoped";
 //--> com/jec/jdi/exceptions
+export {AmbiguousResolutionError} from "./jdi/exceptions/AmbiguousResolutionError";
 export {InvalidInjectionPointError} from "./jdi/exceptions/InvalidInjectionPointError";
 export {JdiError} from "./jdi/exceptions/JdiError";
 export {UnsatisfiedDependencyError} from "./jdi/exceptions/UnsatisfiedDependencyError";

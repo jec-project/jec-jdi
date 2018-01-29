@@ -50,6 +50,25 @@ export interface InjectionPoint {
 
   /**
    * Returns the full name of the class that defines the injection point.
+   * 
+   * @return {string} the full name of the class that defines this injection
+   *                  point.
    */
   getQualifiedClassName():string;
+  
+  /**
+   * Returns the name reference to a bean that have to be associated with the
+   * injection point.
+   * 
+   * @return {string} the name reference to a bean associated with this 
+   *                  injection point.
+   */
+  getRef():string;
+  
+  /**
+   * Obtains the qualifiers defined for this injection point.
+   * 
+   * @return {Array<string>} the qualifiers defined for this injection point.
+   */
+  getQualifiers():Array<string>;
 };

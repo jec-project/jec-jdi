@@ -1,3 +1,4 @@
+
 //  DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
 //
 //   Copyright 2016-2018 Pascal ECHEMANN.
@@ -14,37 +15,25 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
-import {Interface} from "jec-commons";
+import {JdiError} from "./JdiError";
 
 /**
- * The <code>InjectableParams</code> interface defines the API you must 
- * implement to create objects passed as parameter of the JEC
- * <code>@Injectable<code> decorator.
+ * The <code>AmbiguousResolutionError</code> represents an exception thrown by
+ * a JDI container when type disambiguation fails for a bean injection.
  */
-export interface InjectableParams {
+export class AmbiguousResolutionError extends JdiError {
+
+  ////////////////////////////////////////////////////////////////////////////
+  // Constructor function
+  ////////////////////////////////////////////////////////////////////////////
 
   /**
-   * The main interface type implemented by the decorated bean.
+   * Creates a new <code>AmbiguousResolutionError</code> instance.
+   * 
+   * @param {string} message the message that defines the ambiguous dependency.
    */
-  type?:Interface;
-  
-  /**
-   * The references to the environments where the bean can be instanciated.
-   */
-  retention?:Array<string>;
-
-  /**
-   * The qualifiers for the decorated bean.
-   */
-  qualifiers?:Array<string>;
-
-  /**
-   * Provides instantiation policy for the decorated bean.
-   */
-  scope?:string;
-
-  /**
-   * The name reference for the decorated bean.
-   */
-  name?:string;
+  constructor(message:string) {
+    super(`AmbiguousResolutionError: ${message}` );
+    this.message = message;
+  }
 }

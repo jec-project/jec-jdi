@@ -14,16 +14,16 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
-import {UnsatisfiedDependencyError} from "../../../src/com/jec/jdi/exceptions/UnsatisfiedDependencyError";
+import {AmbiguousResolutionError} from "../../../src/com/jec/jdi/exceptions/AmbiguousResolutionError";
 
 /*!
- * This module constains utilities used by the UnsatisfiedDependencyErrorTest
+ * This module constains utilities used by the AmbiguousResolutionErrorTest
  * test suite.
  */
 
 // Utilities:
-export const ERROR_MSG:string = "TestClass.js unsatisfied dependency error";
-export const buildError = function():UnsatisfiedDependencyError{
-  let e:UnsatisfiedDependencyError = new UnsatisfiedDependencyError(ERROR_MSG);
+export const ERROR_MSG:string = "TestClass.js ambiguous resolution error";
+export const buildError = function():AmbiguousResolutionError{
+  let e:AmbiguousResolutionError = new AmbiguousResolutionError(ERROR_MSG);
   return e;
 }
