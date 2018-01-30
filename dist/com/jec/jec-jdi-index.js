@@ -22,5 +22,7 @@ var JdiError_1 = require("./jdi/exceptions/JdiError");
 exports.JdiError = JdiError_1.JdiError;
 var UnsatisfiedDependencyError_1 = require("./jdi/exceptions/UnsatisfiedDependencyError");
 exports.UnsatisfiedDependencyError = UnsatisfiedDependencyError_1.UnsatisfiedDependencyError;
+var DecoratedType_1 = require("./jdi/inject/DecoratedType");
+exports.DecoratedType = DecoratedType_1.DecoratedType;
 var JdiConnectorRefs_1 = require("./jdi/jcad/JdiConnectorRefs");
 exports.JdiConnectorRefs = JdiConnectorRefs_1.JdiConnectorRefs;

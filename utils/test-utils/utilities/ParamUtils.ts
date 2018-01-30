@@ -17,15 +17,15 @@
 import {InjectParams} from "../../../src/com/jec/jdi/annotations/core/InjectParams";
 import {InjectableParams} from "../../../src/com/jec/jdi/annotations/core/InjectableParams";
 
-export const QUALIFIER:string = "test";
+export const QUALIFIERS:Array<string> = ["test"];
 export const RETENTION:Array<string> = ["TEST"];
 
 export const INJECT_PARAMS:InjectParams = {
-  qualifier: QUALIFIER,
+  qualifiers: QUALIFIERS,
   retention: RETENTION
 };
 
 export const INJECTABLE_PARAMS:InjectableParams = {
-  qualifier: QUALIFIER,
+  qualifiers: QUALIFIERS,
   retention: RETENTION
 };

@@ -15,7 +15,7 @@
 //   limitations under the License.
 
 /**
- * The <code>ScopeType</code> Enum provides values that specify the different
+ * The <code>ScopeType</code> enum provides values that specify the different
  * scopes of a the JEC container in JDI context.
  */
 export enum ScopeType {

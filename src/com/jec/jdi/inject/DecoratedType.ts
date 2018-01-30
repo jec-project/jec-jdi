@@ -14,21 +14,19 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
-import {AbstractScope} from "../../../src/com/jec/jdi/context/AbstractScope";
-import {ScopeType} from "../../../src/com/jec/jdi/context/ScopeType";
-
-/*!
- * This module constains utilities used by the AbstractScopeTest test suite.
+/**
+ * The <code>ScopeType</code> enum provides values that specify the different
+ * type of JDI decorators.
  */
+export enum DecoratedType {
+  
+  /**
+   * Specifies that the decorator is associated with a field member.
+   */
+  FIELD = "field",
 
-// Utilities:
-export const TYPE:ScopeType = ScopeType.APPLICATION;
-class AbstractScopeImpl extends AbstractScope {
-  constructor(){
-    super(TYPE);
-  }
-}
-export const buildAbstractScope:Function = function():AbstractScope {
-  let scope:AbstractScope = new AbstractScopeImpl();
-  return scope;
+  /**
+   * Specifies that the decorator is associated with a method parameter.
+   */
+  PARAMETER = "parameter"
 };

@@ -15,6 +15,7 @@
 //   limitations under the License.
 
 import {Scope} from "./Scope";
+import {ScopeType} from "./ScopeType";
 
 /**
  * The base class for all <code>Scope</code> implementations.
@@ -28,9 +29,9 @@ export abstract class AbstractScope implements Scope {
   /**
    * Creates a new <code>AbstractScope</code> instance.
    * 
-   * @param {string} type the type for this <code>Scope</code> object.
+   * @param {ScopeType} type the type for this <code>Scope</code> object.
    */
-  constructor(type:string){
+  constructor(type:ScopeType){
     this._type = type;
   }
 
@@ -41,7 +42,7 @@ export abstract class AbstractScope implements Scope {
   /**
    * The type for this <code>Scope</code> object.
    */
-  private _type:string;
+  private _type:ScopeType;
 
   //////////////////////////////////////////////////////////////////////////////
   // Public methods
@@ -50,7 +51,7 @@ export abstract class AbstractScope implements Scope {
   /**
    * @inheritDoc
    */
-  public getType():string {
+  public getType():ScopeType {
     return this._type;
   }
 };

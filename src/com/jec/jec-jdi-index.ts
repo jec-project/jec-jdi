@@ -33,7 +33,10 @@ export {UnsatisfiedDependencyError} from "./jdi/exceptions/UnsatisfiedDependency
 //--> com/jec/commons/inject
 export {Bean} from "./jdi/inject/Bean";
 export {BeanManager} from "./jdi/inject/BeanManager";
+export {DecoratedType} from "./jdi/inject/DecoratedType";
+export {InjectionContext} from "./jdi/inject/InjectionContext";
 export {InjectionPoint} from "./jdi/inject/InjectionPoint";
+export {InjectionTarget} from "./jdi/inject/InjectionTarget";
 export {JDI} from "./jdi/inject/JDI";
 export {JdiContainer} from "./jdi/inject/JdiContainer";
 export {JdiContext} from "./jdi/inject/JdiContext";

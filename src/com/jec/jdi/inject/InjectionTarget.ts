@@ -14,21 +14,32 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
-import {AbstractScope} from "../../../src/com/jec/jdi/context/AbstractScope";
-import {ScopeType} from "../../../src/com/jec/jdi/context/ScopeType";
+import {DecoratedType} from "./DecoratedType";
 
-/*!
- * This module constains utilities used by the AbstractScopeTest test suite.
+/**
+ * Provides information about dependency injection over a specific object.
  */
+export interface InjectionTarget {
+  
+  /**
+   * The object on which dependency injection is processed.
+   */
+  target:any;
 
-// Utilities:
-export const TYPE:ScopeType = ScopeType.APPLICATION;
-class AbstractScopeImpl extends AbstractScope {
-  constructor(){
-    super(TYPE);
-  }
-}
-export const buildAbstractScope:Function = function():AbstractScope {
-  let scope:AbstractScope = new AbstractScopeImpl();
-  return scope;
+  /**
+   * The reference to the object member on which dependency injection is
+   * declared.
+   */
+  key:string|Symbol;
+
+  /**
+   * The index of the key parameter when <code>decoratedType</code> is
+   * <code>DecoratedType.PARAMETER</code>.
+   */
+  parameterIndex:number;
+
+  /**
+   * The type of decorator that is used to perform dependency injection.
+   */
+  decoratedType:DecoratedType;
 };

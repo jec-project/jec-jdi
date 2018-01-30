@@ -14,21 +14,20 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
-import {AbstractScope} from "../../../src/com/jec/jdi/context/AbstractScope";
-import {ScopeType} from "../../../src/com/jec/jdi/context/ScopeType";
+import {InjectionTarget} from "./InjectionTarget";
 
-/*!
- * This module constains utilities used by the AbstractScopeTest test suite.
+/**
+ * Provides information about the context in which dependency injection occurs.
  */
+export interface InjectionContext {
+  
+  /**
+   * The reference to the object over which dependency injection occurs.
+   */
+  injectionTarget:InjectionTarget;
 
-// Utilities:
-export const TYPE:ScopeType = ScopeType.APPLICATION;
-class AbstractScopeImpl extends AbstractScope {
-  constructor(){
-    super(TYPE);
-  }
-}
-export const buildAbstractScope:Function = function():AbstractScope {
-  let scope:AbstractScope = new AbstractScopeImpl();
-  return scope;
+  /**
+   * The reference to the bean that is used to perform dependency injection.
+   */
+  beanRef:any;
 };
