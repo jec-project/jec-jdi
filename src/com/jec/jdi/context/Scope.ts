@@ -1,3 +1,4 @@
+
 //  DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
 //
 //   Copyright 2016-2018 Pascal ECHEMANN.
@@ -14,6 +15,8 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
+import {ScopeType} from "./ScopeType";
+
 /**
  * Represents the scope for a <code>JdiContext</code> object.
  */
@@ -23,7 +26,7 @@ export interface Scope {
    * Obtains the scope type of the <code>JdiContext</code> object. Possible
    * values are defined by the <code>ScopeType</code> Enum.
    * 
-   * @return {string} the scope type of the <code>JdiContext</code> object.
+   * @return {ScopeType} the scope type of the <code>JdiContext</code> object.
    */
-  getType():string;
+  getType():ScopeType;
 };
