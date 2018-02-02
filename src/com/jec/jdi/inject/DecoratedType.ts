@@ -15,8 +15,8 @@
 //   limitations under the License.
 
 /**
- * The <code>ScopeType</code> enum provides values that specify the different
- * type of JDI decorators.
+ * The <code>DecoratedType</code> enum provides values that specify the 
+ * different type of JDI decorators.
  */
 export enum DecoratedType {
   

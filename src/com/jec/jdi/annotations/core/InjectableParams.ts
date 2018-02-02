@@ -15,6 +15,7 @@
 //   limitations under the License.
 
 import {Interface} from "jec-commons";
+import { ScopeType } from "../../context/ScopeType";
 
 /**
  * The <code>InjectableParams</code> interface defines the API you must 
@@ -41,7 +42,7 @@ export interface InjectableParams {
   /**
    * Provides instantiation policy for the decorated bean.
    */
-  scope?:string;
+  scope?:ScopeType;
 
   /**
    * The name reference for the decorated bean.
