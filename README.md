@@ -21,6 +21,8 @@ $ npm install jec-jdi --save
 
 ## Using Components
 
+### Standard Dependency Injection
+
 All JEC JDI components have to be imported with the ES6 syntax:
 
 ```javascript
@@ -51,6 +53,25 @@ export interface GreetingService {
 }
 
 export const GreetingService = Interface("services.GreetingService");
+```
+
+### DI Shortens
+
+JDI provides the ability to use shorten declarations, instead of initializers, to perform dependency injection. You can use either the type, or the name reference of the bean, to specify dependency injection:
+
+```javascript
+import { Inject } from "jec-jdi";
+import { MyService } from "./sevices/MyService";
+import { MyOtherService } from "./sevices/MyOtherService";
+
+export class HelloWorld {
+
+    @Inject(MyService)
+    private _service:MyService;
+
+    @Inject("MyBeanName")
+    private _otherService:MyOtherService;
+}
 ```
 
 For a complete list of available components, please refer to the [API Reference](#api-reference) documentation.

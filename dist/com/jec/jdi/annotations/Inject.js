@@ -5,7 +5,7 @@ const InvalidInjectionPointError_1 = require("../exceptions/InvalidInjectionPoin
 const jec_commons_1 = require("jec-commons");
 const DCM = jec_commons_1.DecoratorConnectorManager.getInstance();
 const CTXM = jec_commons_1.JcadContextManager.getInstance();
-function Inject(params) {
+function Inject(context) {
     return function (...args) {
         var ctx = null;
         let result = null;
@@ -15,11 +15,11 @@ function Inject(params) {
             lastArg = args[2];
             if (lastArg === undefined) {
                 ctx = CTXM.getContext(JdiConnectorRefs_1.JdiConnectorRefs.INJECT_FIELD_CONNECTOR_REF);
-                result = DCM.getDecorator(JdiConnectorRefs_1.JdiConnectorRefs.INJECT_FIELD_CONNECTOR_REF, ctx).decorate(args[0], args[1], params);
+                result = DCM.getDecorator(JdiConnectorRefs_1.JdiConnectorRefs.INJECT_FIELD_CONNECTOR_REF, ctx).decorate(args[0], args[1], context);
             }
             else if (typeof lastArg === jec_commons_1.PrimitiveType.NUMBER) {
                 ctx = CTXM.getContext(JdiConnectorRefs_1.JdiConnectorRefs.INJECT_PARAMETER_CONNECTOR_REF);
-                result = DCM.getDecorator(JdiConnectorRefs_1.JdiConnectorRefs.INJECT_PARAMETER_CONNECTOR_REF, ctx).decorate(args[0], args[1], lastArg, params);
+                result = DCM.getDecorator(JdiConnectorRefs_1.JdiConnectorRefs.INJECT_PARAMETER_CONNECTOR_REF, ctx).decorate(args[0], args[1], lastArg, context);
             }
         }
         else {

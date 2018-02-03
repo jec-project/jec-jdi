@@ -18,7 +18,7 @@ import {InjectParams} from "./core/InjectParams";
 import {JdiConnectorRefs} from "../jcad/JdiConnectorRefs";
 import {InvalidInjectionPointError} from "../exceptions/InvalidInjectionPointError";
 import {JcadContext, JcadContextManager, DecoratorConnectorManager,
-        PrimitiveType} from "jec-commons";
+        PrimitiveType, Interface} from "jec-commons";
 
 ////////////////////////////////////////////////////////////////////////////////
 // JCAD API
@@ -33,9 +33,10 @@ const CTXM:JcadContextManager = JcadContextManager.getInstance();
  *
  * [[include:Inject.md]]
  *
- * @param {InjectParams} params the parameters for the associated class.
+ * @param {string|Interface|InjectParams} context the injection context for the
+ *                                                current injection point.
  */
-export function Inject(params?:InjectParams):Function {
+export function Inject(context:string|Interface|InjectParams):Function {
   
   return function(...args:any[]):Function {
 
@@ -55,13 +56,13 @@ export function Inject(params?:InjectParams):Function {
         result = DCM.getDecorator(
                     JdiConnectorRefs.INJECT_FIELD_CONNECTOR_REF,
                     ctx
-                  ).decorate(args[0], args[1], params);
+                  ).decorate(args[0], args[1], context);
       } else if(typeof lastArg === PrimitiveType.NUMBER) {
         ctx = CTXM.getContext(JdiConnectorRefs.INJECT_PARAMETER_CONNECTOR_REF);
         result = DCM.getDecorator(
                   JdiConnectorRefs.INJECT_PARAMETER_CONNECTOR_REF,
                   ctx
-                ).decorate(args[0], args[1], lastArg, params);
+                ).decorate(args[0], args[1], lastArg, context);
       } 
     } else {
       throw new InvalidInjectionPointError(args[0]);
