@@ -44,10 +44,10 @@ export function Inject(context:string|Interface|InjectParams):Function {
     // JCAD API
     ////////////////////////////////////////////////////////////////////////////
 
-    var ctx:JcadContext = null;
+    let ctx:JcadContext = null;
     let result:any = null;
     let lastArg:any = null;
-    let argLen:number = args.length;
+    const argLen:number = args.length;
     
     if(argLen === 3) {
       lastArg = args[2];

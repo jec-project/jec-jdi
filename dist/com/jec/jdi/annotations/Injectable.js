@@ -6,7 +6,7 @@ const DCM = jec_commons_1.DecoratorConnectorManager.getInstance();
 const CTXM = jec_commons_1.JcadContextManager.getInstance();
 function Injectable(params) {
     return function (target) {
-        var ctx = CTXM.getContext(JdiConnectorRefs_1.JdiConnectorRefs.INJECTABLE_CONNECTOR_REF);
+        const ctx = CTXM.getContext(JdiConnectorRefs_1.JdiConnectorRefs.INJECTABLE_CONNECTOR_REF);
         return DCM.getDecorator(JdiConnectorRefs_1.JdiConnectorRefs.INJECTABLE_CONNECTOR_REF, ctx)
             .decorate(target, params);
     };

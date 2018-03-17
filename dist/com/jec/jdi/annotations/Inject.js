@@ -7,10 +7,10 @@ const DCM = jec_commons_1.DecoratorConnectorManager.getInstance();
 const CTXM = jec_commons_1.JcadContextManager.getInstance();
 function Inject(context) {
     return function (...args) {
-        var ctx = null;
+        let ctx = null;
         let result = null;
         let lastArg = null;
-        let argLen = args.length;
+        const argLen = args.length;
         if (argLen === 3) {
             lastArg = args[2];
             if (lastArg === undefined) {

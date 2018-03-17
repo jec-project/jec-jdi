@@ -41,7 +41,7 @@ export function Injectable(params?:InjectableParams):Function {
     // JCAD API
     ////////////////////////////////////////////////////////////////////////////
 
-    var ctx:JcadContext =
+    const ctx:JcadContext =
                      CTXM.getContext(JdiConnectorRefs.INJECTABLE_CONNECTOR_REF);
     return DCM.getDecorator(JdiConnectorRefs.INJECTABLE_CONNECTOR_REF, ctx)
               .decorate(target, params);
