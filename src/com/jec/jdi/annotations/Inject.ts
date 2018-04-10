@@ -37,8 +37,8 @@ const CTXM:JcadContextManager = JcadContextManager.getInstance();
  *                                                current injection point.
  */
 export function Inject(context:string|Interface|InjectParams):Function {
-  
-  return function(...args:any[]):Function {
+
+  return function(...args:any[]):any {
 
     ////////////////////////////////////////////////////////////////////////////
     // JCAD API
@@ -66,7 +66,8 @@ export function Inject(context:string|Interface|InjectParams):Function {
       } 
     } else {
       throw new InvalidInjectionPointError(args[0]);
-    }   
+    }
+
     return result;
   }
 }

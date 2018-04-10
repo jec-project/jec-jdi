@@ -15,6 +15,7 @@
 //   limitations under the License.
 
 import {Scope} from "../context/Scope";
+import {InjectionPoint} from "./InjectionPoint";
 
 /**
  * Represents a bean in the JDI specification.
@@ -53,4 +54,13 @@ export interface Bean {
    * Returns the full name of the bean class.
    */
   getQualifiedClassName():string;
+  
+  /**
+   * Returns an array that contains all <code>InjectionPoint</code> objects for
+   * this bean.
+   * 
+   * @return {Array<InjectionPoint>} all <code>InjectionPoint</code> objects for
+   *                                 this bean.
+   */
+  getInjectionPoints():Array<InjectionPoint>;
 };

@@ -1,6 +1,6 @@
 {
   "name": "jec-jdi",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "JEC JDI - Provides developers Dependency Injection and Inversion of Control capabilities to JEC applications.",
   "main": "dist/com/jec/jec-jdi-index",
   "types": "types/jec-jdi.d.ts",
@@ -33,7 +33,7 @@
   },
   "homepage": "https://github.com/pechemann/jec-jdi#readme",
   "dependencies": {
-    "jec-commons": "^1.1.8"
+    "jec-commons": "^1.1.9"
   },
   "devDependencies": {
     "@types/mocha": "^2.2.45",
