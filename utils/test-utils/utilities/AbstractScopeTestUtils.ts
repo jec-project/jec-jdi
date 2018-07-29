@@ -29,6 +29,6 @@ class AbstractScopeImpl extends AbstractScope {
   }
 }
 export const buildAbstractScope:Function = function():AbstractScope {
-  let scope:AbstractScope = new AbstractScopeImpl();
+  const scope:AbstractScope = new AbstractScopeImpl();
   return scope;
 };

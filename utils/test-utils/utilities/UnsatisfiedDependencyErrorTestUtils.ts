@@ -24,6 +24,6 @@ import {UnsatisfiedDependencyError} from "../../../src/com/jec/jdi/exceptions/Un
 // Utilities:
 export const ERROR_MSG:string = "TestClass.js unsatisfied dependency error";
 export const buildError = function():UnsatisfiedDependencyError{
-  let e:UnsatisfiedDependencyError = new UnsatisfiedDependencyError(ERROR_MSG);
+  const e:UnsatisfiedDependencyError = new UnsatisfiedDependencyError(ERROR_MSG);
   return e;
 }

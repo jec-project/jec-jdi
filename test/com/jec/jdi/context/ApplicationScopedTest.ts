@@ -25,7 +25,7 @@ import {ApplicationScoped} from "../../../../../src/com/jec/jdi/context/Applicat
 describe("ApplicationScoped", ()=> {
 
   describe("#getType()", ()=> {
-    let scope:ApplicationScoped = new ApplicationScoped();
+    const scope:ApplicationScoped = new ApplicationScoped();
     it("should return ScopeType.APPLICATION", function() {
       expect(scope.getType()).to.equal(ScopeType.APPLICATION);
     });

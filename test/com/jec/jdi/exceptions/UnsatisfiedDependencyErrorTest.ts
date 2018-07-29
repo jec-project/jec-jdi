@@ -28,14 +28,14 @@ describe("UnsatisfiedDependencyError", ()=> {
 
   describe("instanceOf(Error)", ()=> {
     it("UnsatisfiedDependencyError should extend Error", function() {
-      let error:UnsatisfiedDependencyError = utils.buildError();
+      const error:UnsatisfiedDependencyError = utils.buildError();
       expect(error).to.be.instanceOf(Error);
     });
   });
 
   describe("#message", ()=> {
     it("should return the correct error message", function() {
-      let error:UnsatisfiedDependencyError = utils.buildError();
+      const error:UnsatisfiedDependencyError = utils.buildError();
       expect(error.message).to.equal(utils.ERROR_MSG);
     });
   });

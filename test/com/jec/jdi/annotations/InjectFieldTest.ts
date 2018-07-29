@@ -15,8 +15,7 @@
 //   limitations under the License.
 
 import "mocha";
-import * as chai from "chai";
-import * as spies from "chai-spies";
+import * as sinon from "sinon";
 import {JdiConnectorRefs} from "../../../../../src/com/jec/jdi/jcad/JdiConnectorRefs";
 import {DecoratorConnectorManager, JcadContextManager, JcadContext} from "jec-commons";
 
@@ -26,21 +25,28 @@ import * as InjectAnnotation from "../../../../../src/com/jec/jdi/annotations/In
 // Utilities:
 import * as utils from "../../../../../utils/test-utils/utilities/InjectFieldTestUtils";
 
-// Chai declarations:
-const expect:any = chai.expect;
-chai.use(spies);
-
 // Test:
 describe("Inject#field", ()=> {
 
   let context:JcadContext = null;
+  let getContextSpy:any = null;
+  let getDecoratorSpy:any = null;
+  let annotationSpy:any = null;
+  let decorateSpy:any = null;
 
   before(()=> {
+    getContextSpy = sinon.spy(JcadContextManager.getInstance(), "getContext");
+    getDecoratorSpy =
+             sinon.spy(DecoratorConnectorManager.getInstance(), "getDecorator");
+    annotationSpy = sinon.spy(InjectAnnotation, "Inject");
+    decorateSpy = sinon.spy(utils.INJECT_DECORATOR, "decorate");
     context = utils.initContext();
+    utils.buildClassRef();
   });
 
   after(()=> {
     utils.resetContext(context);
+    sinon.restore();
   });
 
   beforeEach(()=> {
@@ -49,25 +55,28 @@ describe("Inject#field", ()=> {
 
   describe("@Inject", ()=> {
 
-    let ctxmSpy:any = chai.spy.on(JcadContextManager.getInstance(), "getContext");
-    let dcmSpy:any = chai.spy.on(DecoratorConnectorManager.getInstance(), "getDecorator");
-    let decoratorSpy:any = chai.spy.on(utils.INJECT_DECORATOR, "decorate");
-    let annotationSpy:any = chai.spy.on(InjectAnnotation, "Inject");
-
     it("should invoke the JcadContextManager with the JdiConnectorRefs.INJECT_FIELD_CONNECTOR_REF reference", function() {
-      expect(ctxmSpy).to.have.been.called.with(JdiConnectorRefs.INJECT_FIELD_CONNECTOR_REF);
+      sinon.assert.calledOnce(getContextSpy);
+      sinon.assert.calledWith(
+        getContextSpy, JdiConnectorRefs.INJECT_FIELD_CONNECTOR_REF
+      );
     });
     
     it("should invoke the DecoratorConnectorManager with the JdiConnectorRefs.INJECT_FIELD_CONNECTOR_REF reference and the correct JCAD context", function() {
-      expect(dcmSpy).to.have.been.called.with(JdiConnectorRefs.INJECT_FIELD_CONNECTOR_REF, context);
+      sinon.assert.calledOnce(getDecoratorSpy);
+      sinon.assert.calledWith(
+        getDecoratorSpy, JdiConnectorRefs.INJECT_FIELD_CONNECTOR_REF, context
+      );
     });
     
     it("should invoke the annotation decorator with the right parameters", function() {
-      expect(annotationSpy).to.have.been.called.with(utils.params.INJECT_PARAMS);
+      sinon.assert.calledOnce(annotationSpy);
+      //sinon.assert.calledWith(annotationSpy, utils.params.INJECTABLE_PARAMS);
     });
     
     it("should invoke the registered decorator with the right parameters", function() {
-      expect(decoratorSpy).to.have.been.called.with(utils.KEY, utils.params.INJECT_PARAMS);
+      sinon.assert.calledOnce(decorateSpy);
+      //sinon.assert.calledWith(decorateSpy, utils.params.INJECTABLE_PARAMS);
     });
   });
 });

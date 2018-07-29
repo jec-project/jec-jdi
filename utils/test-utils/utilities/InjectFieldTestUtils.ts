@@ -28,9 +28,9 @@ import {InjectParams} from "../../../src/com/jec/jdi/annotations/core/InjectPara
 const LOADER:ClassLoader = new DefaultClassLoader();
 const VALID_CLASS:string = process.cwd() + "/utils/test-utils/classes/InjectFieldTestClass";
 export const params:any = require("./ParamUtils");
-export const buildClassRef:Function = function():void {
-  let ClassRef:any = LOADER.loadClass(VALID_CLASS);
-  new ClassRef();
+export const buildClassRef:Function = function():any {
+  const ClassRef:any = LOADER.loadClass(VALID_CLASS);
+  return new ClassRef();
 };
 class InjectDecorator implements Decorator {
   decorate(target:any, key:string, params:InjectParams):any { return target; }
@@ -38,9 +38,9 @@ class InjectDecorator implements Decorator {
 export const KEY:string = "bean";
 export const INJECT_DECORATOR:Decorator = new InjectDecorator();
 export const initContext:Function = function():JcadContext {
-  let factory:JcadContextFactory = new JcadContextFactory();
-  let connector = new JdiConnector(JdiConnectorRefs.INJECT_FIELD_CONNECTOR_REF, INJECT_DECORATOR);
-  let context:JcadContext = factory.create();
+  const factory:JcadContextFactory = new JcadContextFactory();
+  const connector = new JdiConnector(JdiConnectorRefs.INJECT_FIELD_CONNECTOR_REF, INJECT_DECORATOR);
+  const context:JcadContext = factory.create();
   DecoratorConnectorManager.getInstance().addConnector(connector, context);
   JcadContextManager.getInstance().addContext(JdiConnectorRefs.INJECT_FIELD_CONNECTOR_REF, context);
   return context;

@@ -25,7 +25,7 @@ import {SessionScoped} from "../../../../../src/com/jec/jdi/context/SessionScope
 describe("SessionScoped", ()=> {
 
   describe("#getType()", ()=> {
-    let scope:SessionScoped = new SessionScoped();
+    const scope:SessionScoped = new SessionScoped();
     it("should return ScopeType.SESSION", function() {
       expect(scope.getType()).to.equal(ScopeType.SESSION);
     });

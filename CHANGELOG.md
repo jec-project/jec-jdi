@@ -1,5 +1,15 @@
 # JEC JDI Project: Update Release Notes
 
+<a name="jec-jdi-0.1.1"></a>
+## **0.1.1** (2018-08-29)
+
+### Bug Fixes
+
+### Features
+
+- Updating all dependencies
+- Test cases improvements
+
 <a name="jec-jdi-0.1.0"></a>
 ## **0.1.0** (2018-08-04)
 

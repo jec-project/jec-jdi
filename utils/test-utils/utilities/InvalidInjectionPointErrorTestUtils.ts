@@ -24,7 +24,7 @@ import {InvalidInjectionPointError} from "../../../src/com/jec/jdi/exceptions/In
 // Utilities:
 class TestClass {}
 export const buildError = function():InvalidInjectionPointError{
-  let e:InvalidInjectionPointError = new InvalidInjectionPointError(TestClass);
+  const e:InvalidInjectionPointError = new InvalidInjectionPointError(TestClass);
   return e;
 }
 export const ERROR_MSG:string = "InvalidInjectionPointError: TestClass.js";

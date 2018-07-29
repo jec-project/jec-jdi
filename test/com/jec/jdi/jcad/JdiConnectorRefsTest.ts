@@ -25,19 +25,25 @@ describe("JdiConnectorRefs", ()=> {
 
   describe("#INJECT_PARAMETER_CONNECTOR_REF", ()=> {
     it("INJECT_PARAMETER_CONNECTOR_REF should return 'com.jec.commons.jdi.annotations.Inject#parameter", function() {
-      expect(JdiConnectorRefs.INJECT_PARAMETER_CONNECTOR_REF).to.equal("com.jec.commons.jdi.annotations.Inject#parameter");
+      expect(
+        JdiConnectorRefs.INJECT_PARAMETER_CONNECTOR_REF
+      ).to.equal("com.jec.commons.jdi.annotations.Inject#parameter");
     });
   });
   
   describe("#INJECT_FIELD_CONNECTOR_REF", ()=> {
     it("INJECT_FIELD_CONNECTOR_REF should return 'com.jec.commons.jdi.annotations.Inject#field", function() {
-      expect(JdiConnectorRefs.INJECT_FIELD_CONNECTOR_REF).to.equal("com.jec.commons.jdi.annotations.Inject#field");
+      expect(
+        JdiConnectorRefs.INJECT_FIELD_CONNECTOR_REF
+      ).to.equal("com.jec.commons.jdi.annotations.Inject#field");
     });
   });
   
   describe("#INJECTABLE_CONNECTOR_REF", ()=> {
     it("INJECTABLE_CONNECTOR_REF should return 'com.jec.commons.jdi.annotations.Injectable", function() {
-      expect(JdiConnectorRefs.INJECTABLE_CONNECTOR_REF).to.equal("com.jec.commons.jdi.annotations.Injectable");
+      expect(
+        JdiConnectorRefs.INJECTABLE_CONNECTOR_REF
+      ).to.equal("com.jec.commons.jdi.annotations.Injectable");
     });
   });
 });

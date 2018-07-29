@@ -25,7 +25,7 @@ import {RequestScoped} from "../../../../../src/com/jec/jdi/context/RequestScope
 describe("RequestScoped", ()=> {
 
   describe("#getType()", ()=> {
-    let scope:RequestScoped = new RequestScoped();
+    const scope:RequestScoped = new RequestScoped();
     it("should return ScopeType.REQUEST", function() {
       expect(scope.getType()).to.equal(ScopeType.REQUEST);
     });

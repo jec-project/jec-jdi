@@ -28,14 +28,14 @@ describe("AmbiguousResolutionError", ()=> {
 
   describe("instanceOf(Error)", ()=> {
     it("AmbiguousResolutionError should extend Error", function() {
-      let error:AmbiguousResolutionError = utils.buildError();
+      const error:AmbiguousResolutionError = utils.buildError();
       expect(error).to.be.instanceOf(Error);
     });
   });
 
   describe("#message", ()=> {
     it("should return the correct error message", function() {
-      let error:AmbiguousResolutionError = utils.buildError();
+      const error:AmbiguousResolutionError = utils.buildError();
       expect(error.message).to.equal(utils.ERROR_MSG);
     });
   });

@@ -23,7 +23,7 @@ import {ClassLoader, DefaultClassLoader} from "jec-commons";
 // Utilities:
 const INJECTABLE_CLASS:string = process.cwd() + "/utils/test-utils/classes/InjectableTestClass";
 const LOADER:ClassLoader = new DefaultClassLoader();
-export const buildClassRef:Function = function():void {
-  let ClassRef:any = LOADER.loadClass(INJECTABLE_CLASS);
-  new ClassRef();
+export const buildClassRef:Function = function():any {
+  const ClassRef:any = LOADER.loadClass(INJECTABLE_CLASS);
+  return new ClassRef();
 };

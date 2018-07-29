@@ -28,14 +28,14 @@ describe("InvalidInjectionPointError", ()=> {
 
   describe("instanceOf(Error)", ()=> {
     it("InvalidInjectionPointError should extend Error", function() {
-      let error:InvalidInjectionPointError = utils.buildError();
+      const error:InvalidInjectionPointError = utils.buildError();
       expect(error).to.be.instanceOf(Error);
     });
   });
 
   describe("#message", ()=> {
     it("should return the correct error message", function() {
-      let error:InvalidInjectionPointError = utils.buildError();
+      const error:InvalidInjectionPointError = utils.buildError();
       expect(error.message).to.equal(utils.ERROR_MSG);
     });
   });

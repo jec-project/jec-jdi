@@ -24,6 +24,6 @@ import {AmbiguousResolutionError} from "../../../src/com/jec/jdi/exceptions/Ambi
 // Utilities:
 export const ERROR_MSG:string = "TestClass.js ambiguous resolution error";
 export const buildError = function():AmbiguousResolutionError{
-  let e:AmbiguousResolutionError = new AmbiguousResolutionError(ERROR_MSG);
+  const e:AmbiguousResolutionError = new AmbiguousResolutionError(ERROR_MSG);
   return e;
 }

@@ -27,7 +27,7 @@ import * as utils from "../../../../../utils/test-utils/utilities/AbstractScopeT
 describe("AbstractScope", ()=> {
 
   describe("#getType()", ()=> {
-    let scope:AbstractScope = utils.buildAbstractScope();
+    const scope:AbstractScope = utils.buildAbstractScope();
     it("should retrieve the same value as passed to the constructor", function() {
       expect(scope.getType()).to.equal(utils.TYPE);
     });

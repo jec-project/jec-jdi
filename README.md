@@ -1,5 +1,9 @@
 # JDI Project
 
+[![JEC version](https://img.shields.io/badge/JEC-1.0-%23ba00ff.svg)](http://jecproject.org)
+[![npm version](https://badge.fury.io/js/jec-jdi.svg)](https://www.npmjs.com/package/jec-jdi)
+[![Apache 2.0](https://img.shields.io/hexpm/l/plug.svg)](https://www.apache.org/licenses/LICENSE-2.0)
+
 JavaScript Dependency Injection (JDI) framework is a [JavaScript Enterprise Container][jec-url] project that provides the ability to inject components into a JEC application in a typesafe way.
 
 [![][jec-logo]][jec-url]
@@ -99,7 +103,7 @@ The documentation generator is [TypeDoc](http://typedoc.org/)
 
 ## Update Release Notes
 
-**Current stable release:** [0.1.0](CHANGELOG.md#jec-jdi-0.1.0)
+**Current stable release:** [0.1.1](CHANGELOG.md#jec-jdi-0.1.1)
  
 For a complete listing of release notes for all JEC JDI update releases, see the [CHANGELOG](CHANGELOG.md) file. 
 

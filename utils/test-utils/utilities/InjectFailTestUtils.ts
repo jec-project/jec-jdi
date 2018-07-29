@@ -25,11 +25,11 @@ const CWD:string = process.cwd();
 const FIELD_INJECT_CLASS:string = CWD + "/utils/test-utils/classes/InjectFieldTestClass";
 const PARAMETER_INJECT_CLASS:string = CWD + "/utils/test-utils/classes/InjectParameterTestClass";
 const LOADER:ClassLoader = new DefaultClassLoader();
-export const buildFieldClassRef:Function = function():void {
-  let ClassRef:any = LOADER.loadClass(FIELD_INJECT_CLASS);
-  new ClassRef();
+export const buildFieldClassRef:Function = function():any {
+  const ClassRef:any = LOADER.loadClass(FIELD_INJECT_CLASS);
+  return new ClassRef();
 };
-export const buildParameterClassRef:Function = function():void {
-  let ClassRef:any = LOADER.loadClass(PARAMETER_INJECT_CLASS);
-  new ClassRef();
+export const buildParameterClassRef:Function = function():any {
+  const ClassRef:any = LOADER.loadClass(PARAMETER_INJECT_CLASS);
+  return new ClassRef();
 };
